@@ -1,0 +1,458 @@
+
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: var(--font-sans, sans-serif); }
+.container { padding: 1.5rem 0; }
+.header { margin-bottom: 2rem; }
+.header h1 { font-size: 22px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 6px; }
+.header p { font-size: 14px; color: var(--color-text-secondary); line-height: 1.6; }
+.progress-bar { display: flex; gap: 6px; margin: 1.5rem 0; flex-wrap: wrap; }
+.prog-step { flex: 1; min-width: 80px; height: 4px; border-radius: 2px; background: var(--color-border-tertiary); transition: background 0.3s; cursor: pointer; }
+.prog-step.active { background: #3B8BD4; }
+.prog-step.done { background: #1D9E75; }
+.phase-nav { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 1.5rem; }
+.phase-btn { padding: 6px 14px; font-size: 13px; border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); background: transparent; color: var(--color-text-secondary); cursor: pointer; transition: all 0.2s; white-space: nowrap; }
+.phase-btn:hover { background: var(--color-background-secondary); color: var(--color-text-primary); }
+.phase-btn.active { background: var(--color-background-info); color: var(--color-text-info); border-color: var(--color-border-info); }
+.phase-card { background: var(--color-background-primary); border: 0.5px solid var(--color-border-tertiary); border-radius: var(--border-radius-lg); overflow: hidden; }
+.phase-header { padding: 1.25rem 1.5rem; border-bottom: 0.5px solid var(--color-border-tertiary); display: flex; align-items: flex-start; gap: 14px; }
+.phase-icon { width: 40px; height: 40px; border-radius: var(--border-radius-md); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+.phase-meta { flex: 1; }
+.phase-meta h2 { font-size: 16px; font-weight: 500; color: var(--color-text-primary); margin-bottom: 4px; }
+.phase-meta p { font-size: 13px; color: var(--color-text-secondary); line-height: 1.5; }
+.phase-badge { font-size: 11px; padding: 3px 10px; border-radius: 20px; margin-left: auto; flex-shrink: 0; font-weight: 500; }
+.sections { padding: 0; }
+.section { border-bottom: 0.5px solid var(--color-border-tertiary); }
+.section:last-child { border-bottom: none; }
+.section-header { padding: 1rem 1.5rem; display: flex; align-items: center; gap: 10px; cursor: pointer; user-select: none; }
+.section-header:hover { background: var(--color-background-secondary); }
+.section-title { font-size: 14px; font-weight: 500; color: var(--color-text-primary); flex: 1; }
+.section-count { font-size: 12px; color: var(--color-text-tertiary); }
+.chevron { font-size: 12px; color: var(--color-text-tertiary); transition: transform 0.2s; }
+.chevron.open { transform: rotate(180deg); }
+.questions { display: none; padding: 0 1.5rem 1rem; }
+.questions.open { display: block; }
+.question-item { display: flex; gap: 10px; padding: 8px 0; border-bottom: 0.5px solid var(--color-border-tertiary); align-items: flex-start; }
+.question-item:last-child { border-bottom: none; }
+.q-check { width: 16px; height: 16px; border: 0.5px solid var(--color-border-secondary); border-radius: 4px; cursor: pointer; flex-shrink: 0; margin-top: 2px; display: flex; align-items: center; justify-content: center; font-size: 11px; transition: all 0.15s; }
+.q-check.checked { background: #1D9E75; border-color: #1D9E75; color: #fff; }
+.q-text { font-size: 13px; color: var(--color-text-secondary); line-height: 1.6; flex: 1; cursor: pointer; }
+.q-text.checked { color: var(--color-text-tertiary); text-decoration: line-through; }
+.q-tag { font-size: 11px; padding: 2px 8px; border-radius: 20px; flex-shrink: 0; font-weight: 500; }
+.tag-critico { background: var(--color-background-danger); color: var(--color-text-danger); }
+.tag-estrategico { background: var(--color-background-warning); color: var(--color-text-warning); }
+.tag-tecnico { background: var(--color-background-info); color: var(--color-text-info); }
+.tag-contenido { background: var(--color-background-success); color: var(--color-text-success); }
+.footer-nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 0; margin-top: 1rem; }
+.nav-btn { padding: 8px 20px; font-size: 14px; border: 0.5px solid var(--color-border-secondary); border-radius: var(--border-radius-md); background: transparent; color: var(--color-text-primary); cursor: pointer; }
+.nav-btn:hover { background: var(--color-background-secondary); }
+.nav-btn.primary { background: var(--color-background-info); color: var(--color-text-info); border-color: var(--color-border-info); }
+.stats-row { display: flex; gap: 8px; margin-bottom: 1.5rem; flex-wrap: wrap; }
+.stat-card { flex: 1; min-width: 80px; background: var(--color-background-secondary); border-radius: var(--border-radius-md); padding: 10px 12px; }
+.stat-label { font-size: 11px; color: var(--color-text-tertiary); margin-bottom: 4px; }
+.stat-value { font-size: 20px; font-weight: 500; color: var(--color-text-primary); }
+</style>
+
+<div class="container">
+  <div class="header">
+    <h1>Plan de ruta — Sitio web Metcar Uruguay</h1>
+    <p>Hoja de ruta estratégica completa para construir el sitio web ideal. Recorré cada fase y respondé las preguntas antes de escribir una sola línea de código.</p>
+  </div>
+
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-label">Fases</div>
+      <div class="stat-value" id="stat-fases">6</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Preguntas clave</div>
+      <div class="stat-value" id="stat-total">0</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Respondidas</div>
+      <div class="stat-value" id="stat-done">0</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Progreso</div>
+      <div class="stat-value" id="stat-pct">0%</div>
+    </div>
+  </div>
+
+  <div class="progress-bar" id="progress-bar"></div>
+  <div class="phase-nav" id="phase-nav"></div>
+  <div id="phase-content"></div>
+  <div class="footer-nav">
+    <button class="nav-btn" id="btn-prev" onclick="navigate(-1)">← Anterior</button>
+    <span id="phase-indicator" style="font-size:13px;color:var(--color-text-tertiary)"></span>
+    <button class="nav-btn primary" id="btn-next" onclick="navigate(1)">Siguiente →</button>
+  </div>
+</div>
+
+<script>
+const phases = [
+  {
+    id: 0,
+    name: "Descubrimiento",
+    icon: "🔍",
+    color: "background: #E6F1FB; color: #185FA5;",
+    badge: "background: #E6F1FB; color: #185FA5;",
+    badgeText: "Fase 1 · Inicio",
+    desc: "Entender en profundidad la empresa, sus clientes, competidores y situación actual antes de tomar ninguna decisión de diseño.",
+    sections: [
+      {
+        title: "La empresa y su historia",
+        questions: [
+          { text: "¿Quiénes son exactamente los dueños/responsables que tomarán decisiones sobre el sitio? ¿Hay un interlocutor único?", tag: "critico" },
+          { text: "¿Cuál es la historia de Metcar? ¿40 años importando qué exactamente? ¿Empezaron con hidráulicos o con abrasivos?", tag: "estrategico" },
+          { text: "¿Tienen presencia en todo Uruguay o solo en la zona de Sarandí Grande / Florida?", tag: "estrategico" },
+          { text: "¿Cuántos empleados tienen? ¿Tienen equipo comercial/ventas o todo lo hace el dueño?", tag: "estrategico" },
+          { text: "¿Tienen distribuidores, representantes o sucursales en otras ciudades?", tag: "critico" },
+        ]
+      },
+      {
+        title: "Clientes actuales",
+        questions: [
+          { text: "¿Quiénes son sus clientes típicos? ¿Talleres mecánicos, industrias, constructoras, agricultores, todos?", tag: "critico" },
+          { text: "¿El 80% de sus ventas viene de clientes recurrentes o de nuevos clientes?", tag: "critico" },
+          { text: "¿Los clientes son principalmente del interior del país o también de Montevideo?", tag: "estrategico" },
+          { text: "¿Venden a empresas (B2B), a particulares (B2C) o a ambos?", tag: "critico" },
+          { text: "¿Tienen clientes grandes que compran en volumen (ej. frigoríficos, empresas agrícolas) o son clientes medianos/pequeños?", tag: "estrategico" },
+        ]
+      },
+      {
+        title: "Situación digital actual",
+        questions: [
+          { text: "¿Cómo consiguen clientes hoy? ¿Boca a boca, referencias, visitas en persona, WhatsApp?", tag: "critico" },
+          { text: "¿Tienen redes sociales activas? ¿Facebook, Instagram, WhatsApp Business?", tag: "tecnico" },
+          { text: "¿Cuántas visitas tiene el sitio actual mensualmente? ¿Tienen Google Analytics?", tag: "tecnico" },
+          { text: "¿Alguien les contacta actualmente a través del sitio web o es meramente informativo?", tag: "critico" },
+          { text: "¿Tienen dominio propio (metcar.uy) con hosting pagado? ¿Quién lo administra?", tag: "tecnico" },
+        ]
+      }
+    ]
+  },
+  {
+    id: 1,
+    name: "Objetivos",
+    icon: "🎯",
+    color: "background: #EAF3DE; color: #3B6D11;",
+    badgeText: "Fase 2 · Estrategia",
+    desc: "Definir con precisión qué queremos que el sitio logre. Sin objetivo claro, no hay diseño correcto.",
+    sections: [
+      {
+        title: "¿Para qué sirve el sitio?",
+        questions: [
+          { text: "¿El objetivo principal es VENDER a través del sitio (e-commerce) o CAPTAR contactos para que llamen/visiten?", tag: "critico" },
+          { text: "¿Quieren que el sitio funcione como catálogo online de consulta para los clientes ya existentes?", tag: "critico" },
+          { text: "¿Quieren expandir geográficamente y llegar a nuevas zonas del país a través del sitio?", tag: "estrategico" },
+          { text: "¿El sitio puede reemplazar o reducir el tiempo que dedican a responder consultas repetitivas por teléfono?", tag: "estrategico" },
+          { text: "¿Quieren posicionarse como la referencia en insumos hidráulicos en Uruguay (autoridad de marca)?", tag: "estrategico" },
+        ]
+      },
+      {
+        title: "Ventas y conversiones",
+        questions: [
+          { text: "¿Cuál sería el 'éxito' del sitio en 6 meses? ¿X consultas por semana? ¿X pedidos nuevos?", tag: "critico" },
+          { text: "¿El sitio debe generar leads (formulario de contacto, pedido de cotización) o cerrar ventas directas?", tag: "critico" },
+          { text: "¿Quieren que los clientes hagan pedidos online o prefieren que primero consulten y luego llamen?", tag: "critico" },
+          { text: "¿Tienen productos de venta impulsiva (bajo precio, fácil decisión) o todo requiere asesoramiento previo?", tag: "estrategico" },
+        ]
+      },
+      {
+        title: "Posicionamiento de marca",
+        questions: [
+          { text: "¿Qué los diferencia de la competencia? ¿Precio, stock disponible, asesoramiento técnico, tiempo de entrega?", tag: "critico" },
+          { text: "¿Quieren que el sitio transmita 'empresa grande y profesional' o 'empresa familiar con 40 años de trayectoria'?", tag: "estrategico" },
+          { text: "¿Tienen certificaciones, marcas exclusivas o alianzas con fabricantes que valga la pena destacar?", tag: "estrategico" },
+        ]
+      }
+    ]
+  },
+  {
+    id: 2,
+    name: "Productos",
+    icon: "📦",
+    color: "background: #FAEEDA; color: #633806;",
+    badgeText: "Fase 3 · Catálogo",
+    desc: "Definir cómo se presenta el catálogo es probablemente la decisión más importante del sitio para una empresa distribuidora.",
+    sections: [
+      {
+        title: "Estructura del catálogo",
+        questions: [
+          { text: "¿Cuántos productos tienen aproximadamente en catálogo? ¿Decenas, cientos, miles?", tag: "critico" },
+          { text: "¿Los productos están organizados por categoría (hidráulicos vs abrasivos) o por marca, o por aplicación?", tag: "critico" },
+          { text: "¿Tienen fotos de los productos o habría que conseguirlas de los proveedores?", tag: "contenido" },
+          { text: "¿Cada producto tiene código/referencia único? ¿Hoja técnica o ficha de datos?", tag: "contenido" },
+          { text: "¿El catálogo cambia frecuentemente (nuevos productos, descontinuados) o es bastante estable?", tag: "tecnico" },
+        ]
+      },
+      {
+        title: "Precios: ¿visibles o no?",
+        questions: [
+          { text: "¿Los precios van a estar visibles en el sitio? Esta es una decisión estratégica clave — ¿por qué sí o por qué no?", tag: "critico" },
+          { text: "Si los precios NO van visibles, ¿cómo va el cliente a solicitar un precio? ¿Formulario, WhatsApp, teléfono?", tag: "critico" },
+          { text: "¿Los precios varían según el volumen de compra o el tipo de cliente (público vs empresa)?", tag: "estrategico" },
+          { text: "¿Los precios en Uruguay cambian frecuentemente por el dólar? ¿Quién los actualizaría en el sitio?", tag: "tecnico" },
+          { text: "¿Competidores muestran precios? ¿Tiene sentido competir en ese terreno o diferenciarse por servicio?", tag: "estrategico" },
+        ]
+      },
+      {
+        title: "Experiencia de búsqueda",
+        questions: [
+          { text: "¿Los clientes saben exactamente qué buscan (código de referencia) o necesitan ayuda para encontrar el producto correcto?", tag: "critico" },
+          { text: "¿Vale la pena tener un buscador de productos por código, diámetro, presión, aplicación, etc.?", tag: "tecnico" },
+          { text: "¿Quieren filtros avanzados (por marca, tipo de conexión, presión máxima, material) o una navegación simple por categorías?", tag: "tecnico" },
+          { text: "¿El catálogo PDF que tienen hoy tiene buena estructura? ¿Se puede usar como base para organizar el sitio?", tag: "contenido" },
+        ]
+      }
+    ]
+  },
+  {
+    id: 3,
+    name: "Usuarios y accesos",
+    icon: "👤",
+    color: "background: #EEEDFE; color: #3C3489;",
+    badgeText: "Fase 4 · Usuarios",
+    desc: "¿Va a haber sistema de usuarios registrados? ¿Diferentes tipos de acceso? ¿Área de cliente? Esto define mucho de la tecnología necesaria.",
+    sections: [
+      {
+        title: "Sistema de registro de clientes",
+        questions: [
+          { text: "¿Quieren que los clientes puedan crear una cuenta en el sitio? ¿Para qué la usarían?", tag: "critico" },
+          { text: "¿El registro abriría acceso a precios especiales, historial de pedidos o catálogo exclusivo?", tag: "estrategico" },
+          { text: "¿Tienen ya una base de datos de clientes que se podría importar al sistema?", tag: "tecnico" },
+          { text: "¿Habría un proceso de aprobación manual para nuevas cuentas (ej. verificar que es empresa real)?", tag: "estrategico" },
+        ]
+      },
+      {
+        title: "Pedidos y cotizaciones",
+        questions: [
+          { text: "¿Los clientes registrados podrían hacer pedidos online o solo solicitudes de cotización?", tag: "critico" },
+          { text: "¿Quieren guardar un historial de pedidos por cliente accesible desde el sitio?", tag: "estrategico" },
+          { text: "¿El cliente podría ver el estado de su pedido en tiempo real (enviado, en camino, entregado)?", tag: "estrategico" },
+          { text: "¿Necesitan integración con algún sistema de gestión que ya usen (facturación, stock)?", tag: "tecnico" },
+        ]
+      },
+      {
+        title: "Panel de administración",
+        questions: [
+          { text: "¿Quién va a actualizar el sitio internamente? ¿Tienen alguien con conocimientos técnicos o necesitan un sistema muy sencillo?", tag: "critico" },
+          { text: "¿Necesitan poder actualizar productos, precios y stock sin depender de un programador?", tag: "critico" },
+          { text: "¿Cuántas personas de Metcar necesitarían acceso al panel de administración?", tag: "tecnico" },
+        ]
+      }
+    ]
+  },
+  {
+    id: 4,
+    name: "Contenido y SEO",
+    icon: "✍️",
+    color: "background: #E1F5EE; color: #085041;",
+    badgeText: "Fase 5 · Contenido",
+    desc: "El mejor sitio del mundo no sirve de nada si nadie lo encuentra. El contenido y el SEO deben planificarse antes del diseño.",
+    sections: [
+      {
+        title: "Contenido existente",
+        questions: [
+          { text: "¿Tienen textos escritos sobre la empresa, sus servicios, historia? ¿O hay que crearlo todo desde cero?", tag: "contenido" },
+          { text: "¿Tienen fotos de la empresa, depósito, equipo? ¿O habría que hacer una sesión fotográfica?", tag: "contenido" },
+          { text: "¿El catálogo PDF actual está completo y actualizado? ¿Es la versión que va al sitio?", tag: "contenido" },
+          { text: "¿Tienen testimonios de clientes, casos de éxito o referencias que se puedan publicar?", tag: "contenido" },
+        ]
+      },
+      {
+        title: "SEO y visibilidad",
+        questions: [
+          { text: "¿Por qué términos quieren aparecer en Google? Ej: 'mangueras hidráulicas Uruguay', 'discos abrasivos Sarandí Grande'", tag: "estrategico" },
+          { text: "¿Quieren aparecer en búsquedas locales de Uruguay o también competir con resultados regionales?", tag: "estrategico" },
+          { text: "¿Tienen Google My Business configurado? (Vital para búsquedas locales)", tag: "tecnico" },
+          { text: "¿Quieren un blog o sección de artículos técnicos para atraer tráfico? ¿Quién escribiría el contenido?", tag: "estrategico" },
+        ]
+      },
+      {
+        title: "Idioma y tono",
+        questions: [
+          { text: "¿El sitio será solo en español o también en portugués (para clientes de Brasil, zona fronteriza)?", tag: "contenido" },
+          { text: "¿Quieren un tono técnico-profesional o más cercano y accesible para el cliente promedio?", tag: "contenido" },
+          { text: "¿Hay terminología técnica específica del rubro hidráulico que haya que usar correctamente?", tag: "contenido" },
+        ]
+      }
+    ]
+  },
+  {
+    id: 5,
+    name: "Tecnología y presupuesto",
+    icon: "⚙️",
+    color: "background: #FAECE7; color: #4A1B0C;",
+    badgeText: "Fase 6 · Implementación",
+    desc: "Con todo lo anterior definido, recién aquí elegimos tecnología, calculamos costos y planificamos plazos.",
+    sections: [
+      {
+        title: "Plataforma tecnológica",
+        questions: [
+          { text: "¿Prefieren un CMS como WordPress/WooCommerce (fácil de manejar) o una solución a medida más potente?", tag: "tecnico" },
+          { text: "Si hay e-commerce ¿con pagos en línea? ¿Qué medios? ¿Mercado Pago, transferencia bancaria, efectivo?", tag: "tecnico" },
+          { text: "¿El sitio necesita conectarse a su sistema de stock/facturación actual o funcionará de forma independiente?", tag: "tecnico" },
+          { text: "¿Necesitan que el sitio funcione bien en celular? (La respuesta es siempre sí, pero ¿qué % de sus clientes accede desde móvil?)", tag: "tecnico" },
+        ]
+      },
+      {
+        title: "Presupuesto y recursos",
+        questions: [
+          { text: "¿Tienen un presupuesto definido para el desarrollo del sitio? ¿Y para mantenimiento mensual?", tag: "critico" },
+          { text: "¿Quién va a mantener y actualizar el sitio una vez que esté listo? ¿Contratan a alguien o lo hacen internamente?", tag: "critico" },
+          { text: "¿Van a invertir en publicidad online (Google Ads, Facebook Ads) para traer visitas?", tag: "estrategico" },
+          { text: "¿Cuál es el plazo deseable para tener el sitio funcionando?", tag: "estrategico" },
+        ]
+      },
+      {
+        title: "Métricas de éxito post-lanzamiento",
+        questions: [
+          { text: "¿Cómo van a medir si el sitio está funcionando? ¿Consultas recibidas, pedidos, tiempo en el sitio?", tag: "estrategico" },
+          { text: "¿Quieren recibir reportes automáticos de visitas y conversiones del sitio?", tag: "tecnico" },
+          { text: "¿Tienen algún competidor cuyo sitio admiran o quieren superar? ¿Cuál?", tag: "estrategico" },
+        ]
+      }
+    ]
+  }
+];
+
+let currentPhase = 0;
+const checkedMap = {};
+
+function countAll() {
+  let total = 0;
+  phases.forEach((p, pi) => p.sections.forEach((s, si) => s.questions.forEach((q, qi) => {
+    total++;
+  })));
+  return total;
+}
+
+function countDone() {
+  return Object.values(checkedMap).filter(Boolean).length;
+}
+
+function updateStats() {
+  const total = countAll();
+  const done = countDone();
+  document.getElementById('stat-total').textContent = total;
+  document.getElementById('stat-done').textContent = done;
+  document.getElementById('stat-pct').textContent = Math.round((done/total)*100) + '%';
+}
+
+function getPhaseProgress(pi) {
+  let total = 0, done = 0;
+  phases[pi].sections.forEach((s, si) => s.questions.forEach((q, qi) => {
+    total++;
+    if (checkedMap[`${pi}-${si}-${qi}`]) done++;
+  }));
+  return { total, done };
+}
+
+function toggleCheck(pi, si, qi) {
+  const key = `${pi}-${si}-${qi}`;
+  checkedMap[key] = !checkedMap[key];
+  const el = document.getElementById(`chk-${key}`);
+  const txt = document.getElementById(`txt-${key}`);
+  if (el) {
+    el.classList.toggle('checked', checkedMap[key]);
+    el.textContent = checkedMap[key] ? '✓' : '';
+  }
+  if (txt) txt.classList.toggle('checked', checkedMap[key]);
+  updateStats();
+  updateProgressBar();
+}
+
+function toggleSection(id) {
+  const q = document.getElementById('q-' + id);
+  const chv = document.getElementById('chv-' + id);
+  if (!q) return;
+  q.classList.toggle('open');
+  chv.classList.toggle('open');
+}
+
+function updateProgressBar() {
+  const bar = document.getElementById('progress-bar');
+  bar.innerHTML = '';
+  phases.forEach((p, pi) => {
+    const { total, done } = getPhaseProgress(pi);
+    const div = document.createElement('div');
+    div.className = 'prog-step';
+    div.title = p.name;
+    div.onclick = () => goToPhase(pi);
+    if (pi === currentPhase) div.classList.add('active');
+    else if (done === total && total > 0) div.classList.add('done');
+    bar.appendChild(div);
+  });
+}
+
+function renderPhaseNav() {
+  const nav = document.getElementById('phase-nav');
+  nav.innerHTML = '';
+  phases.forEach((p, pi) => {
+    const btn = document.createElement('button');
+    btn.className = 'phase-btn' + (pi === currentPhase ? ' active' : '');
+    btn.innerHTML = p.icon + ' ' + p.name;
+    btn.onclick = () => goToPhase(pi);
+    nav.appendChild(btn);
+  });
+}
+
+function renderPhase(pi) {
+  const p = phases[pi];
+  const { total, done } = getPhaseProgress(pi);
+  let html = `<div class="phase-card">
+    <div class="phase-header">
+      <div class="phase-icon" style="${p.color}">${p.icon}</div>
+      <div class="phase-meta">
+        <h2>${p.name}</h2>
+        <p>${p.desc}</p>
+      </div>
+      <span class="phase-badge" style="${p.color}">${p.badgeText}</span>
+    </div>
+    <div class="sections">`;
+
+  p.sections.forEach((s, si) => {
+    const secId = `${pi}-${si}`;
+    html += `<div class="section">
+      <div class="section-header" onclick="toggleSection('${secId}')">
+        <span class="section-title">${s.title}</span>
+        <span class="section-count">${s.questions.length} preguntas</span>
+        <span class="chevron" id="chv-${secId}">▼</span>
+      </div>
+      <div class="questions" id="q-${secId}">`;
+    s.questions.forEach((q, qi) => {
+      const key = `${pi}-${si}-${qi}`;
+      const isChecked = checkedMap[key];
+      html += `<div class="question-item">
+        <div class="q-check ${isChecked ? 'checked' : ''}" id="chk-${key}" onclick="toggleCheck(${pi},${si},${qi})">${isChecked ? '✓' : ''}</div>
+        <span class="q-text ${isChecked ? 'checked' : ''}" id="txt-${key}" onclick="toggleCheck(${pi},${si},${qi})">${q.text}</span>
+        <span class="q-tag tag-${q.tag}">${q.tag}</span>
+      </div>`;
+    });
+    html += `</div></div>`;
+  });
+
+  html += `</div></div>`;
+  document.getElementById('phase-content').innerHTML = html;
+  document.getElementById('phase-indicator').textContent = `Fase ${pi + 1} de ${phases.length} · ${done}/${total} respondidas`;
+  document.getElementById('btn-prev').style.visibility = pi === 0 ? 'hidden' : 'visible';
+  document.getElementById('btn-next').textContent = pi === phases.length - 1 ? '✓ Plan completado' : 'Siguiente →';
+}
+
+function goToPhase(pi) {
+  currentPhase = pi;
+  renderPhaseNav();
+  renderPhase(pi);
+  updateProgressBar();
+}
+
+function navigate(dir) {
+  const next = currentPhase + dir;
+  if (next >= 0 && next < phases.length) goToPhase(next);
+}
+
+goToPhase(0);
+updateStats();
+updateProgressBar();
+</script>

@@ -218,49 +218,52 @@ se podria agregar al final una seccion donde los clientes ponen valoraciones y s
 ------------------------------------------------------------------------------------------------------------
 
 ¿Quieren que los clientes puedan crear una cuenta en el sitio? ¿Para qué la usarían?
-Si haríamos q los clientes puedan iniciar sesión con cuenta propia, ya que seria ya q cada uno tiene q poder ver su carrito, la empresa podría hacer ofertas personalizadas para cada cliente, si añadimos lo de dejar opiniones seria obligatorio.
+Si haríamos q los clientes puedan iniciar sesión con cuenta propia, ya que cada uno tiene q poder ver su carrito, la empresa metcar podría hacer ofertas personalizadas para cada cliente (a futuro, para la primera version no). si añadimos lo de dejar opiniones seria obligatorio.
 
 
 ¿El registro abriría acceso a precios especiales, historial de pedidos o catálogo exclusivo?
-Exactamente, ese es nuestro enfoque actual
+Exactamente, ese es nuestro enfoque futuro, hay que dejar la pagina hecha para que eso pueda quedar implementado facilmente pero en primera instancia todos los clientes tendran los mismos presios.
 
 
 ¿Tienen ya una base de datos de clientes que se podría importar al sistema?
-No estoy muy enterado de eso, pero no creo que lo haya, si hay bases de sistemas de productos y de más cosas cuales no estoy muy enterado.
+hay un excel con los clientes y las compras que han realizado pero no estoy muy seguro de como esta distribuida esa info alli, estaria bueno luego de tener la pagina hecha explorar la opcion de cargar datos historicos de clientes.
 
 ¿Habría un proceso de aprobación manual para nuevas cuentas (ej. verificar que es empresa real)?
-Si alguien asegura ser una empresa y quiere mejores precios, lo mejor sea que al momento de pedir pida el lote de cosas que necesita, nos comunique quien es y nosotros le hacemos preciosa través de esas ofertas especiales, pero una vez ya sabemos que es lo que va a comprar.
+si habra, lo ideal seria que cuando un nuevo cliente quiera registrarse en la pagina de metcar, que le aparezca un formulario (a determinar que informacion seria importante y necesaria incluir alli) y que el mismo cliente cargue toda la informacion de su empresa, y que luego llegue un correo a metcar avisando que un cliente nuevo se quiere registrar,
+entonces patricia (la asistente de metcar) entraria a la pagina para avalar esa cuenta nueva creada y darle una contraseña de ingreso al cliente.
 
 
 ¿Los clientes registrados podrían hacer pedidos online o solo solicitudes de cotización?
-Solo pedidos de cotización, de todas formas con el sistema ya hablado, que seria seleccionar el carrito como si compraras online, pero que sirva para mandar cotización automática, dejando un recuadro junto a la cotización para que el cliente aclare algo si lo necesita.
+los clientes armarian su carrito con todos los articulos que necesiten comprar y luego con el sistema que ya se aclaro antes, patricia la asistente veria el pedido del cliente y confirmaria la cotizacion. pero el pago no se hace a travez de la pagina metcar. estaria bueno agregar que cuando 
+el cliente mande el carrito con su pedido, que haya una caja de texto opcional que al cliente le permita hacer algun comentario o peticion o aclaracion para ese pedido en partuicular. 
 
 
 ¿Quieren guardar un historial de pedidos por cliente accesible desde el sitio?
-Si, esta perfecto que el cliente vea las cosas q pidió, es hasta necesario, poder ver si lo q pidió está pendiente, visto, o ya cotizado (esperando respuesta).
+Si, esta perfecto que el cliente vea las cosas q pidió, es hasta necesario, poder ver si lo q pidió está pendiente, visto, o ya cotizado (esperando respuesta). e incluso todo el historico de pedidos.
 
 
 ¿El cliente podría ver el estado de su pedido en tiempo real (enviado, en camino, entregado)?
-Solamente lo de si fue enviado, visto, cotizado, etc. Esos tipos de estados
+exactamente, ya comentamos eso
 
 
 ¿Necesitan integración con algún sistema de gestión que ya usen (facturación, stock)?
-.
-.
-.
+es fundamental tener conectado el control de stock, precios de articulos,... etc a la pagina metcar. pero actualmente no cuento con la info de que sistema usan para llevar ese control pero creo que es excel.
 
 
 ¿Quién va a actualizar el sitio internamente? ¿Tienen alguien con conocimientos técnicos o necesitan un sistema muy sencillo?
-Lo suyo seria que lo actualize Patricia, quien suele recibir los pedidos, stock y facturación. Tiene que ser muy intruictivo porq no es programadors ni tiene esos conocimientos.
+Lo suyo seria que lo actualize Patricia (asistente del abuelo), quien suele recibir los pedidos, stock y facturación. Tiene que ser muy intruictivo porq no es programadora ni tiene esos conocimientos. ademas 
+hay que independicar a los procesos de las personas, si el dia de mañana patricia se va y llega otro trabajador a suplirla, tiene que saber hacer todo lo que hacia patricia muy intuitivo y sencillo.
 
 
 ¿Necesitan poder actualizar productos, precios y stock sin depender de un programador?
-exactamente, por eso debe ser intruictivo
+exactamente, por eso debe ser intruictivo. eso sabes tu mas que yo, hay que tomar esa info del excel? o como es la mejor manera de hacerlo, propone tu. lo dejo en tus manos.
 
 
 
 ¿Cuántas personas de Metcar necesitarían acceso al panel de administración?
-No más de 5 personas, Peteto, Maxi, Patricia, y Mi primo y yo que somos los técnicos.
+al panel de administracion (osea control total) tendrian solo peteto y patricia (ojo no las personas en si sino los roles). luego maxi podria tener su cuenta con menos permisos. por ejemplo un cliente hace un pedido, patricia confirma el presupuesto, luego 
+el cliente paga (por fuera de la pagina), entonces patricia pasa el pedido a "en preparacion" o algo asi, que le llegue una notificacion a maxi, maxi arma el pedido y a traves de su usuario le da a pedido ya preparado y se le vuelve a notificar a la cuenta de 
+patricia para que continue con el proceso. patricia tendria el control toal, no hace falta que maxi cumpla con su parte, pero seria de gran ayuda para agilizar. tema de los permisos de cada cuenta, tienen que ser facilmente configurables desde la cuenta principal de administracion. 
 
 
 

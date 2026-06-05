@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Metcar Home Template V2</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+--red:#B83214;
+--black:#0B0B0B;
+--yellow:#F5C518;
+--off:#F4F2EC;
+--steel:#68686A;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Barlow,sans-serif;background:#e8e6e1;padding:40px}
+.page{max-width:1280px;margin:auto;background:white;box-shadow:0 20px 60px rgba(0,0,0,.08)}
+.top-strip{
+background:var(--black);
+color:var(--yellow);
+padding:8px 24px;
+font-family:"Barlow Condensed";
+letter-spacing:2px;
+font-size:12px;
+}
+header{
+height:90px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:0 40px;
+background:white;
+}
+.logo{
+font-family:"Bebas Neue";
+font-size:44px;
+color:var(--red);
+letter-spacing:2px;
+}
+nav{display:flex;gap:40px}
+nav a{text-decoration:none;color:#111;font-weight:500}
+.cta{
+background:var(--red);
+color:white;
+padding:16px 28px;
+text-decoration:none;
+font-weight:600;
+}
+.hero{
+height:680px;
+position:relative;
+overflow:hidden;
+background:
+linear-gradient(to right,rgba(244,242,236,.96) 35%, rgba(244,242,236,.15) 70%),
+url('https://images.unsplash.com/photo-1565043589221-1a6fd9ae45c7?q=80&w=1800&auto=format&fit=crop');
+background-size:cover;
+background-position:center;
+}
+.hero-content{
+position:absolute;
+left:75px;
+top:140px;
+max-width:600px;
+}
+.kicker{
+font-family:"Barlow Condensed";
+letter-spacing:3px;
+color:var(--red);
+margin-bottom:15px;
+}
+h1{
+font-family:"Bebas Neue";
+font-size:92px;
+line-height:.9;
+color:#111;
+margin-bottom:20px;
+}
+.sub{
+font-size:24px;
+line-height:1.4;
+max-width:540px;
+margin-bottom:30px;
+}
+.buttons{display:flex;gap:15px}
+.btn-primary{
+background:var(--red);
+color:white;
+padding:18px 30px;
+text-decoration:none;
+font-weight:600;
+}
+.btn-secondary{
+border:2px solid #111;
+color:#111;
+padding:16px 28px;
+text-decoration:none;
+font-weight:600;
+}
+.hero-code{
+position:absolute;
+bottom:25px;
+left:0;
+right:0;
+background:rgba(11,11,11,.95);
+color:var(--yellow);
+padding:14px 30px;
+font-family:"Barlow Condensed";
+letter-spacing:2px;
+}
+.categories{
+padding:80px 70px;
+background:var(--off);
+}
+.section-title{
+font-family:"Bebas Neue";
+font-size:64px;
+margin-bottom:30px;
+}
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+.card{
+background:white;
+padding:35px;
+min-height:220px;
+border-top:5px solid var(--red);
+}
+.card h3{
+font-family:"Bebas Neue";
+font-size:42px;
+margin-bottom:10px;
+}
+.card p{color:var(--steel)}
+</style>
+</head>
+<body>
+<div class="page">
+
+<div class="top-strip">
+METCAR • MANGUERAS HIDRÁULICAS • TERMINALES • DISCOS DE CORTE • ENVÍOS A TODO URUGUAY
+</div>
+
+<header>
+<div class="logo">METCAR</div>
+
+<nav>
+<a href="#">Catálogo</a>
+<a href="#">Configurador</a>
+<a href="#">Empresa</a>
+<a href="#">Contacto</a>
+</nav>
+
+<a href="#" class="cta">SOLICITAR COTIZACIÓN</a>
+</header>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<div class="kicker">DESDE 2014 • IMPORTADOR DIRECTO</div>
+
+<h1>
+MANGUERAS<br>
+TERMINALES<br>
+INDUSTRIALES
+</h1>
+
+<p class="sub">
+Todo lo que necesitás para hidráulica, maquinaria agrícola e industria.
+Un proveedor. Todo Uruguay.
+</p>
+
+<div class="buttons">
+<a href="#" class="btn-primary">VER CATÁLOGO</a>
+<a href="#" class="btn-secondary">CONFIGURAR MANGUERA</a>
+</div>
+
+</div>
+
+<div class="hero-code">
+METCAR 1/2" SAE100R2AT • 225 BAR • WP225 • EN STOCK • IMPORTADO POR METCAR URUGUAY
+</div>
+
+</section>
+
+<section class="categories">
+
+<h2 class="section-title">EXPLORÁ NUESTRAS CATEGORÍAS</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>MANGUERAS</h3>
+<p>Catálogo profesional para aplicaciones hidráulicas e industriales.</p>
+</div>
+
+<div class="card">
+<h3>TERMINALES</h3>
+<p>Amplia variedad de conexiones y accesorios especializados.</p>
+</div>
+
+<div class="card">
+<h3>DISCOS Y HERRAMIENTAS</h3>
+<p>Insumos para talleres, mantenimiento e industria pesada.</p>
+</div>
+
+</div>
+
+</section>
+
+</div>
+</body>
+</html>

@@ -739,14 +739,16 @@ CONDICIONES PARA DEJAR RESEÑA:
 PROCESO:
   1. Al completarse un pedido, el sistema puede ofrecerle al cliente dejar reseña.
   2. El cliente la escribe (texto + puntuación en estrellas).
-  3. La reseña queda en estado "Pendiente de aprobación".
+  3. La reseña queda en estado "Enviada, Gracias por su reseña :)".
   4. Patricia recibe notificación de nueva reseña pendiente.
   5. Patricia revisa y aprueba o rechaza desde el panel Admin.
   6. Si se aprueba, la reseña aparece en la sección pública del sitio.
+  7. Si se rechaza, la reseña no aparece en la sección pública del sitio pero igualmente queda registrada internamente.
+  (al cliente no se le informa si la reseña fue aprovada o rechazada)
 
 VISUALIZACIÓN PÚBLICA:
   Sección en la página principal o en una página dedicada, con reseñas de
-  clientes reales. Muestra: nombre (o inicial + apellido), texto, puntuación,
+  clientes reales. Muestra: nombre (o inicial + apellido) o Anonimo (si el cliente quiere discrecion), texto, puntuación,
   fecha. Genera confianza en visitantes nuevos.
 
 CONFIGURACIÓN:
@@ -998,8 +1000,8 @@ FUERA DE V1 (para V2 y siguientes):
 
 COMPETIDORES IDENTIFICADOS (para análisis y superación):
   - bilpa.com.uy
-  - emporeodelofiltros (pendiente URL exacta)
-  - pertilco (pendiente URL exacta)
+  - emporiodelosfiltros.com
+  - pertilco.com.uy
   - drhegal.com.uy
 
 PÁGINAS EJEMPLO — CÓMO NO HACER (referencias negativas):
@@ -1052,7 +1054,7 @@ MANTENIDO POR NO-TÉCNICOS:
   Patricia debe poder actualizar stock, precios, agregar productos, validar
   clientes, gestionar pedidos y aprobar reseñas sin necesitar ayuda del equipo
   de desarrollo. El diseño del panel Admin debe ser tan claro que se aprenda
-  con una sola sesión de capacitación.
+  con una sola sesión de capacitación o de un solo vistazo.
 
 INDEPENDENCIA DE PERSONAS:
   El sistema debe funcionar igual si Patricia es reemplazada por otra persona.

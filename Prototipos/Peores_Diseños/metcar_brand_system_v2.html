@@ -1,0 +1,233 @@
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500&family=Barlow+Condensed:wght@500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+.wrap{padding:1.5rem 0;font-size:13px}
+.overline{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:var(--color-text-tertiary);font-weight:500;margin-bottom:6px}
+.sec-desc{font-size:13px;color:var(--color-text-secondary);line-height:1.65;margin-bottom:1.25rem}
+.divider{border:none;border-top:0.5px solid var(--color-border-tertiary);margin:1.75rem 0}
+.cgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:1rem}
+.csw{border-radius:var(--border-radius-md);overflow:hidden;border:0.5px solid var(--color-border-tertiary)}
+.cblock{height:80px;display:flex;align-items:flex-end;padding:7px 9px}
+.clbl{font-family:'Bebas Neue',sans-serif;font-size:11px;letter-spacing:1px}
+.cinfo{padding:9px 10px;background:var(--color-background-primary)}
+.cname{font-size:12px;font-weight:500;color:var(--color-text-primary)}
+.chex{font-family:var(--font-mono);font-size:11px;color:var(--color-text-tertiary);margin-top:1px}
+.cuse{font-size:11px;color:var(--color-text-tertiary);margin-top:3px;line-height:1.4}
+.tspec{border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1.25rem;margin-bottom:8px}
+.tlbl{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--color-text-tertiary);font-weight:500;margin-bottom:12px}
+.fpill{background:var(--color-background-secondary);padding:2px 8px;border-radius:20px;font-size:10px;font-family:var(--font-mono);margin-left:6px}
+.t-disp{font-family:'Bebas Neue',sans-serif;font-size:44px;line-height:1;color:var(--color-text-primary)}
+.t-disp-acc{font-family:'Bebas Neue',sans-serif;font-size:26px;line-height:1;color:#B83214;margin-top:4px}
+.t-body-spec{font-family:'Barlow',sans-serif;font-size:15px;line-height:1.65;color:var(--color-text-secondary)}
+.t-cond{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:2px;color:var(--color-text-primary)}
+.t-cond-sub{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:500;color:var(--color-text-tertiary);letter-spacing:1.5px;margin-top:4px}
+.tmeta{font-size:11px;color:var(--color-text-tertiary);border-top:0.5px solid var(--color-border-tertiary);padding-top:9px;margin-top:12px;line-height:1.5}
+.hband{background:#0B0B0B;border-radius:var(--border-radius-md);padding:13px 16px;position:relative;overflow:hidden;margin-bottom:8px}
+.hstripe{position:absolute;left:0;top:0;bottom:0;width:5px;background:#B83214}
+.hmain{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;color:#F5C518;letter-spacing:2.5px;padding-left:10px}
+.hsub{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:500;color:#7A6810;letter-spacing:2px;padding-left:10px;margin-top:3px}
+.appgrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.appel{border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:12px;background:var(--color-background-primary)}
+.applbl{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--color-text-tertiary);margin-bottom:8px}
+.bspec{display:inline-block;background:#0B0B0B;color:#F5C518;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;padding:4px 10px;border-radius:4px}
+.bcat{display:inline-block;background:#B83214;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:1.5px;padding:4px 10px;border-radius:4px}
+.nbig{font-family:'Bebas Neue',sans-serif;font-size:40px;color:#B83214;line-height:1}
+.nunit{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:500;color:var(--color-text-tertiary);letter-spacing:2px;margin-top:2px}
+.stkbadge{display:inline-flex;align-items:center;gap:6px;background:#0B0B0B;padding:4px 10px;border-radius:4px}
+.stkdot{width:6px;height:6px;border-radius:50%;background:#F5C518;flex-shrink:0}
+.stktxt{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;color:#F5C518;letter-spacing:1.5px}
+.nostock{display:inline-block;background:#0B0B0B;color:#7A6810;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:1.5px;padding:4px 10px;border-radius:4px;margin-top:4px}
+.igrid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.icard{border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:14px;background:var(--color-background-primary)}
+.inum{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#B83214;line-height:1;margin-bottom:6px}
+.ititle{font-size:13px;font-weight:500;color:var(--color-text-primary);margin-bottom:5px}
+.idesc{font-size:12px;color:var(--color-text-secondary);line-height:1.55}
+.tokgrid{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.tokrow{display:flex;align-items:center;gap:8px;padding:8px 10px;border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);background:var(--color-background-primary)}
+.toksw{width:20px;height:20px;border-radius:4px;flex-shrink:0;border:0.5px solid var(--color-border-tertiary)}
+.tokvar{font-family:var(--font-mono);font-size:11px;color:var(--color-text-secondary);flex:1}
+.tokhex{font-family:var(--font-mono);font-size:11px;color:var(--color-text-tertiary)}
+</style>
+
+<div class="wrap">
+
+  <div style="border-left:3px solid #B83214;padding-left:14px;margin-bottom:2rem;border-radius:0">
+    <p class="overline">Brand system completo — Metcar Uruguay</p>
+    <h2 style="font-size:18px;font-weight:500;color:var(--color-text-primary);margin-bottom:6px">Industrial. Confiable. Reconocible.</h2>
+    <p style="font-size:13px;color:var(--color-text-secondary);line-height:1.65">El objetivo es que en 10 años alguien en un taller del interior vea ese rojo y diga: <span style="color:var(--color-text-primary);font-weight:500">Metcar</span>. Todo lo que está acá apunta a ese fin.</p>
+  </div>
+
+  <p class="overline">00 — Logo actual</p>
+  <div style="border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1.25rem;margin-bottom:1.25rem;background:var(--color-background-secondary)">
+    <p style="font-size:13px;font-weight:500;color:var(--color-text-primary);margin-bottom:6px">Huesos fuertes. No se reemplaza — se codifica y amplifica.</p>
+    <p style="font-size:12px;color:var(--color-text-secondary);line-height:1.6;margin-bottom:10px">Tres activos que sobreviven intactos. Dos acciones de mejora:</p>
+    <div style="display:flex;flex-wrap:wrap;gap:6px">
+      <span style="background:var(--color-background-success);color:var(--color-text-success);font-size:11px;padding:3px 10px;border-radius:20px;font-weight:500">Rojo Metcar</span>
+      <span style="background:var(--color-background-success);color:var(--color-text-success);font-size:11px;padding:3px 10px;border-radius:20px;font-weight:500">Tipografía industrial bold</span>
+      <span style="background:var(--color-background-success);color:var(--color-text-success);font-size:11px;padding:3px 10px;border-radius:20px;font-weight:500">Fitting hidráulico en la C</span>
+      <span style="background:var(--color-background-warning);color:var(--color-text-warning);font-size:11px;padding:3px 10px;border-radius:20px;font-weight:500">→ Vectorizar a artes perfectas</span>
+      <span style="background:var(--color-background-info);color:var(--color-text-info);font-size:11px;padding:3px 10px;border-radius:20px;font-weight:500">+ Extraer el fitting como isotipo</span>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <p class="overline">01 — Paleta de colores</p>
+  <p class="sec-desc">Seis colores con roles exactos. Nada es decorativo.</p>
+  <div class="cgrid">
+    <div class="csw">
+      <div class="cblock" style="background:#B83214"><span class="clbl" style="color:rgba(255,255,255,0.3)">Primario</span></div>
+      <div class="cinfo"><div class="cname">Metcar Red</div><div class="chex">#B83214</div><div class="cuse">Logo, CTAs, brand elements</div></div>
+    </div>
+    <div class="csw">
+      <div class="cblock" style="background:#0B0B0B"><span class="clbl" style="color:rgba(255,255,255,0.18)">Ancla</span></div>
+      <div class="cinfo"><div class="cname">Industrial Black</div><div class="chex">#0B0B0B</div><div class="cuse">Specs técnicas, navbar</div></div>
+    </div>
+    <div class="csw">
+      <div class="cblock" style="background:#F5C518"><span class="clbl" style="color:rgba(0,0,0,0.25)">Acento</span></div>
+      <div class="cinfo"><div class="cname">Hose Yellow</div><div class="chex">#F5C518</div><div class="cuse">El guiño a las mangueras</div></div>
+    </div>
+    <div class="csw">
+      <div class="cblock" style="background:#68686A"><span class="clbl" style="color:rgba(255,255,255,0.28)">Neutro</span></div>
+      <div class="cinfo"><div class="cname">Steel Gray</div><div class="chex">#68686A</div><div class="cuse">Texto secundario, bordes</div></div>
+    </div>
+    <div class="csw">
+      <div class="cblock" style="background:#F4F2EC;border-bottom:0.5px solid var(--color-border-tertiary)"><span class="clbl" style="color:rgba(0,0,0,0.14)">Fondo</span></div>
+      <div class="cinfo"><div class="cname">Off-White</div><div class="chex">#F4F2EC</div><div class="cuse">Fondo principal del sitio</div></div>
+    </div>
+    <div class="csw">
+      <div class="cblock" style="background:#1B1916"><span class="clbl" style="color:rgba(255,255,255,0.16)">Oscuro</span></div>
+      <div class="cinfo"><div class="cname">Dark Iron</div><div class="chex">#1B1916</div><div class="cuse">Footer, secciones hero</div></div>
+    </div>
+  </div>
+  <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 14px;font-size:12px;color:var(--color-text-secondary);line-height:1.6">
+    <span style="color:var(--color-text-primary);font-weight:500">Reglas de combinación:</span> Rojo + negro = fuerza máxima · Negro + amarillo = lenguaje técnico · Rojo sobre Off-White = acción principal · Nunca rojo sobre amarillo.
+  </div>
+
+  <hr class="divider">
+
+  <p class="overline">02 — Sistema tipográfico</p>
+  <p class="sec-desc">Tres roles con función exacta. La jerarquía es intencionalmente industrial.</p>
+
+  <div class="tspec">
+    <div class="tlbl">Display · Titulares de marca<span class="fpill">Bebas Neue</span></div>
+    <div class="t-disp">Mangueras hidráulicas</div>
+    <div class="t-disp-acc">Metcar Uruguay — Desde 2014</div>
+    <div class="tmeta">Uso: hero titles, nombres de categoría, números de presión como elemento gráfico. Es la misma familia visual que el texto impreso en mangueras reales — esa conexión es intencional.</div>
+  </div>
+
+  <div class="tspec">
+    <div class="tlbl">Cuerpo · Texto de lectura<span class="fpill">Barlow</span></div>
+    <div class="t-body-spec">Importamos y distribuimos insumos hidráulicos de primera calidad para industrias, talleres y maquinaria agrícola en todo Uruguay. Más de 10 años de trayectoria respaldan cada producto.</div>
+    <div class="tmeta">Regular / Medium · Uso: descripciones de producto, párrafos, formularios. Limpio y legible con carácter industrial sin ser difícil de leer.</div>
+  </div>
+
+  <div class="tspec">
+    <div class="tlbl">Técnico · Specs y badges<span class="fpill">Barlow Condensed Bold</span></div>
+    <div class="t-cond">1/2" · SAE 100R2AT · 225 BAR · WP 225</div>
+    <div class="t-cond-sub">REF: MC-MH-05-R2 · EN STOCK · IMPORTADO POR METCAR</div>
+    <div class="tmeta">700 weight · Uso: especificaciones técnicas, códigos de referencia, badges de estado. El "idioma" de los fittings trasladado a pantalla.</div>
+  </div>
+
+  <hr class="divider">
+
+  <p class="overline">03 — El concepto Hose Code</p>
+  <p class="sec-desc">Las mangueras hidráulicas reales tienen texto técnico en amarillo sobre negro. Metcar adopta ese lenguaje como firma visual — sutil, coherente, acumulativa en el tiempo.</p>
+
+  <p style="font-size:11px;color:var(--color-text-tertiary);margin-bottom:6px;text-transform:uppercase;letter-spacing:1px">La manguera real:</p>
+  <div class="hband">
+    <div class="hstripe"></div>
+    <div class="hmain">METCAR 1/2" SAE 100R2AT 225BAR WP 225 TEST 450</div>
+    <div class="hsub">IMPORTADO POR METCAR URUGUAY · metcar.uy</div>
+  </div>
+
+  <p style="font-size:11px;color:var(--color-text-tertiary);margin:10px 0 8px;text-transform:uppercase;letter-spacing:1px">Se convierte en el lenguaje visual del sitio:</p>
+  <div class="appgrid">
+    <div class="appel">
+      <div class="applbl">Badge de especificación</div>
+      <span class="bspec">1/2" · 225 BAR</span>
+    </div>
+    <div class="appel">
+      <div class="applbl">Etiqueta de categoría</div>
+      <span class="bcat">Mangueras</span>
+    </div>
+    <div class="appel">
+      <div class="applbl">Número técnico como gráfico</div>
+      <div class="nbig">225</div>
+      <div class="nunit">BAR · Presión máxima de trabajo</div>
+    </div>
+    <div class="appel">
+      <div class="applbl">Indicadores de stock</div>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <div class="stkbadge"><div class="stkdot"></div><span class="stktxt">En stock</span></div>
+        <span class="nostock">Sin stock</span>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:10px;background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 14px;font-size:12px;color:var(--color-text-secondary);line-height:1.6">
+    <span style="color:var(--color-text-primary);font-weight:500">El efecto buscado:</span> cada vez que alguien vea una manguera real con texto amarillo, piense en Metcar. Y cada vez que vea el sitio, recuerde las mangueras. Un loop de asociación que se construye con el tiempo.
+  </div>
+
+  <hr class="divider">
+
+  <p class="overline">04 — Ideas creativas adicionales</p>
+  <p class="sec-desc">Seis direcciones para hacer la marca reconocible en cada punto de contacto.</p>
+  <div class="igrid">
+    <div class="icard">
+      <div class="inum">01</div>
+      <div class="ititle">El Fitting como isotipo</div>
+      <div class="idesc">El círculo concéntrico del logo (la C con la rueda hidráulica) se extrae como isotipo independiente. Sin texto, solo el fitting en rojo. Es el favicon, el sello de empaque, el ícono de WhatsApp Business. La "gota de Nike" de Metcar.</div>
+    </div>
+    <div class="icard">
+      <div class="inum">02</div>
+      <div class="ititle">La Banda de Presión</div>
+      <div class="idesc">Las mangueras usan bandas de color para identificar presión. Metcar adopta una franja horizontal roja como elemento recurrente — en el header del sitio, en los emails, en el catálogo impreso. Siempre ahí. Siempre roja.</div>
+    </div>
+    <div class="icard">
+      <div class="inum">03</div>
+      <div class="ititle">Fotografía modo taller</div>
+      <div class="idesc">Todas las fotos de producto: fondo negro, iluminación lateral dramática, producto como protagonista absoluto. Ninguna foto genérica sobre fondo blanco. Como Apple pero con acero y mangueras. Genera deseo incluso en un fitting.</div>
+    </div>
+    <div class="icard">
+      <div class="inum">04</div>
+      <div class="ititle">El número técnico grande</div>
+      <div class="idesc">"225 BAR" en Bebas Neue enorme ocupando el fondo de una sección. Las especificaciones técnicas como elemento gráfico, no como datos secundarios. Le dice al técnico "sabemos de qué hablamos" sin escribir una palabra.</div>
+    </div>
+    <div class="icard">
+      <div class="inum">05</div>
+      <div class="ititle">Plantilla WhatsApp</div>
+      <div class="idesc">Metcar vende por WhatsApp. Un template visual: fondo negro, foto del producto, banda roja, código en amarillo condensed. En 2 segundos el cliente reconoce Metcar sin leer el nombre. Cada estado publicado es publicidad acumulada.</div>
+    </div>
+    <div class="icard">
+      <div class="inum">06</div>
+      <div class="ititle">El catálogo como objeto</div>
+      <div class="idesc">El catálogo impreso futuro sigue el mismo lenguaje: tapa oscura, Bebas Neue en rojo, specs en amarillo. Un objeto que no se tira porque parece premium. El cliente del interior lo deja sobre el escritorio del taller, a la vista de todos.</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <p class="overline">05 — Design tokens para el código</p>
+  <p class="sec-desc">Las variables CSS que se usarán directamente en Next.js. Definen el sistema una sola vez, todo lo demás las hereda.</p>
+  <div class="tokgrid">
+    <div class="tokrow"><div class="toksw" style="background:#B83214"></div><span class="tokvar">--metcar-red</span><span class="tokhex">#B83214</span></div>
+    <div class="tokrow"><div class="toksw" style="background:#0B0B0B"></div><span class="tokvar">--metcar-black</span><span class="tokhex">#0B0B0B</span></div>
+    <div class="tokrow"><div class="toksw" style="background:#F5C518;border-color:rgba(0,0,0,0.12)"></div><span class="tokvar">--metcar-yellow</span><span class="tokhex">#F5C518</span></div>
+    <div class="tokrow"><div class="toksw" style="background:#68686A"></div><span class="tokvar">--metcar-steel</span><span class="tokhex">#68686A</span></div>
+    <div class="tokrow"><div class="toksw" style="background:#F4F2EC;border-color:rgba(0,0,0,0.12)"></div><span class="tokvar">--metcar-offwhite</span><span class="tokhex">#F4F2EC</span></div>
+    <div class="tokrow"><div class="toksw" style="background:#1B1916"></div><span class="tokvar">--metcar-dark</span><span class="tokhex">#1B1916</span></div>
+    <div class="tokrow" style="grid-column:1/-1"><div style="width:20px;height:20px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--color-text-tertiary)">Aa</div><span class="tokvar">--font-display</span><span class="tokhex">'Bebas Neue'</span></div>
+    <div class="tokrow" style="grid-column:1/-1"><div style="width:20px;height:20px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--color-text-tertiary)">Aa</div><span class="tokvar">--font-body</span><span class="tokhex">'Barlow'</span></div>
+    <div class="tokrow" style="grid-column:1/-1"><div style="width:20px;height:20px;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:12px;color:var(--color-text-tertiary)">Aa</div><span class="tokvar">--font-technical</span><span class="tokhex">'Barlow Condensed'</span></div>
+  </div>
+
+  <hr class="divider">
+
+  <div style="border-left:3px solid #B83214;padding-left:14px;border-radius:0">
+    <p style="font-size:11px;text-transform:uppercase;letter-spacing:1.5px;color:var(--color-text-tertiary);margin-bottom:6px;font-weight:500">El sistema completo en una frase</p>
+    <p style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--color-text-primary);line-height:1.3">Rojo Metcar · Negro industrial · Amarillo manguera · Bebas Neue como voz</p>
+    <p style="font-size:12px;color:var(--color-text-secondary);margin-top:8px;line-height:1.6">Cuando los cuatro elementos se juntan, no hay dudas de quién habla. Ese es el objetivo: que el sistema sea tan coherente y consistente que la marca se reconozca antes de leer el nombre.</p>
+  </div>
+
+</div>

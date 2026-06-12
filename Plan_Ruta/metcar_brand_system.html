@@ -1,0 +1,259 @@
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@400;500;600&family=Barlow+Condensed:wght@500;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+.wrap{padding:1.5rem 0;font-size:13px}
+.overline{font-size:10px;text-transform:uppercase;letter-spacing:2px;color:var(--color-text-tertiary);font-weight:500;margin-bottom:6px}
+.sec-desc{font-size:13px;color:var(--color-text-secondary);line-height:1.65;margin-bottom:1.25rem}
+.divider{border:none;border-top:0.5px solid var(--color-border-tertiary);margin:2rem 0}
+.brand-red{color:#B83214}
+
+.color-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:1rem}
+.cswatch{border-radius:var(--border-radius-md);overflow:hidden;border:0.5px solid var(--color-border-tertiary)}
+.sblock{height:80px;display:flex;align-items:flex-end;padding:7px 9px}
+.slabel-on{font-family:'Bebas Neue',sans-serif;font-size:11px;letter-spacing:1.5px}
+.sinfo{padding:9px 10px;background:var(--color-background-primary)}
+.sname{font-size:12px;font-weight:500;color:var(--color-text-primary)}
+.shex{font-family:var(--font-mono);font-size:11px;color:var(--color-text-tertiary);margin-top:1px}
+.suse{font-size:11px;color:var(--color-text-tertiary);margin-top:3px;line-height:1.4}
+
+.tspec{border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1.25rem;margin-bottom:8px}
+.tlabel{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:var(--color-text-tertiary);font-weight:500;margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.tlabel-pill{background:var(--color-background-secondary);padding:2px 8px;border-radius:20px;font-size:10px}
+.t-disp{font-family:'Bebas Neue',sans-serif;font-size:46px;line-height:1;color:var(--color-text-primary);letter-spacing:1px}
+.t-disp-red{font-family:'Bebas Neue',sans-serif;font-size:26px;line-height:1;color:#B83214;letter-spacing:0.5px;margin-top:4px}
+.t-body{font-family:'Barlow',sans-serif;font-size:15px;line-height:1.65;color:var(--color-text-secondary)}
+.t-cond{font-family:'Barlow Condensed',sans-serif;font-size:14px;font-weight:700;letter-spacing:2px;color:var(--color-text-primary)}
+.t-cond-sm{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:500;color:var(--color-text-tertiary);letter-spacing:1.5px;margin-top:4px}
+.t-meta{font-size:11px;color:var(--color-text-tertiary);border-top:0.5px solid var(--color-border-tertiary);padding-top:9px;margin-top:12px;line-height:1.5}
+
+.hose-band{background:#0B0B0B;border-radius:var(--border-radius-md);padding:13px 16px;position:relative;overflow:hidden;margin-bottom:8px}
+.hose-stripe{position:absolute;left:0;top:0;bottom:0;width:5px;background:#B83214}
+.hose-main{font-family:'Barlow Condensed',sans-serif;font-size:15px;font-weight:700;color:#F5C518;letter-spacing:2.5px;padding-left:10px}
+.hose-sub{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:500;color:#8A7010;letter-spacing:2px;padding-left:10px;margin-top:3px}
+.app-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.app-el{border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-md);padding:12px;background:var(--color-background-primary)}
+.app-el-label{font-size:10px;text-transform:uppercase;letter-spacing:1px;color:var(--color-text-tertiary);margin-bottom:8px}
+.badge-spec{display:inline-block;background:#0B0B0B;color:#F5C518;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:2px;padding:4px 10px;border-radius:4px}
+.badge-cat{display:inline-block;background:#B83214;color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:1.5px;padding:4px 10px;border-radius:4px}
+.badge-nostock{display:inline-block;background:#0B0B0B;color:#8A7010;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:1.5px;padding:4px 10px;border-radius:4px}
+.n-big{font-family:'Bebas Neue',sans-serif;font-size:40px;color:#B83214;line-height:1}
+.n-unit{font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:600;color:var(--color-text-tertiary);letter-spacing:2px;margin-top:2px}
+.stk-badge{display:inline-flex;align-items:center;gap:6px;background:#0B0B0B;padding:4px 10px;border-radius:4px}
+.stk-dot{width:6px;height:6px;border-radius:50%;background:#F5C518;flex-shrink:0;animation:pulse 2s ease-in-out infinite}
+.stk-txt{font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;color:#F5C518;letter-spacing:1.5px}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.5}}
+
+.ideas-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.idea-card{border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:14px;background:var(--color-background-primary)}
+.idea-num{font-family:'Bebas Neue',sans-serif;font-size:30px;color:#B83214;line-height:1;margin-bottom:6px}
+.idea-title{font-size:13px;font-weight:500;color:var(--color-text-primary);margin-bottom:5px}
+.idea-desc{font-size:12px;color:var(--color-text-secondary);line-height:1.55}
+
+.logo-analysis{border:0.5px solid var(--color-border-tertiary);border-radius:var(--border-radius-lg);padding:1.25rem;margin-bottom:1.25rem;background:var(--color-background-secondary)}
+.logo-row{display:flex;gap:14px;align-items:flex-start}
+.logo-text{flex:1}
+.logo-tag{display:inline-block;font-size:10px;padding:2px 8px;border-radius:20px;font-weight:500;margin-right:4px;margin-bottom:4px}
+.tag-green{background:var(--color-background-success);color:var(--color-text-success)}
+.tag-amber{background:var(--color-background-warning);color:var(--color-text-warning)}
+.tag-blue{background:var(--color-background-info);color:var(--color-text-info)}
+
+.summary-box{background:var(--color-background-secondary);border-radius:var(--border-radius-lg);padding:1.25rem;border-left:3px solid #B83214}
+</style>
+
+<div class="wrap">
+
+  <div style="border-left:3px solid #B83214;padding-left:14px;margin-bottom:2rem">
+    <p class="overline">Identidad visual</p>
+    <h2 style="font-size:18px;font-weight:500;color:var(--color-text-primary);margin-bottom:6px">Brand system — Metcar Uruguay</h2>
+    <p style="font-size:13px;color:var(--color-text-secondary);line-height:1.65">Industrial. Confiable. Reconocible. El objetivo es que dentro de 10 años, alguien en un taller del interior vea ese rojo y ese logotipo y diga inmediatamente: <em style="color:var(--color-text-primary)">Metcar</em>.</p>
+  </div>
+
+  <p class="overline">00 — Análisis del logo actual</p>
+  <div class="logo-analysis">
+    <div class="logo-row">
+      <div class="logo-text">
+        <p style="font-size:13px;font-weight:500;color:var(--color-text-primary);margin-bottom:6px">El logo actual ya tiene huesos fuertes. No se reemplaza — se codifica y amplifica.</p>
+        <p style="font-size:12px;color:var(--color-text-secondary);line-height:1.6;margin-bottom:10px">Tres elementos del logo existente que ya son activos de marca y deben sobrevivir intactos:</p>
+        <div>
+          <span class="logo-tag tag-green">✓ El rojo Metcar</span>
+          <span class="logo-tag tag-green">✓ La tipografía industrial bold</span>
+          <span class="logo-tag tag-green">✓ El fitting hidráulico en la "C"</span>
+          <span class="logo-tag tag-amber">→ Limpiar a vectores perfectos</span>
+          <span class="logo-tag tag-blue">+ Extraer el fitting como isotipo</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <p class="overline">01 — Paleta de colores</p>
+  <p class="sec-desc">Seis colores con roles exactos. Nada es decorativo: cada uno tiene una función específica.</p>
+  <div class="color-grid">
+    <div class="cswatch">
+      <div class="sblock" style="background:#B83214"><span class="slabel-on" style="color:rgba(255,255,255,0.35)">PRIMARIO</span></div>
+      <div class="sinfo">
+        <div class="sname">Metcar Red</div>
+        <div class="shex">#B83214</div>
+        <div class="suse">Logo, CTAs, elementos de marca</div>
+      </div>
+    </div>
+    <div class="cswatch">
+      <div class="sblock" style="background:#0B0B0B"><span class="slabel-on" style="color:rgba(255,255,255,0.2)">ANCLA</span></div>
+      <div class="sinfo">
+        <div class="sname">Industrial Black</div>
+        <div class="shex">#0B0B0B</div>
+        <div class="suse">Specs técnicas, navbar, fondo logo</div>
+      </div>
+    </div>
+    <div class="cswatch">
+      <div class="sblock" style="background:#F5C518"><span class="slabel-on" style="color:rgba(0,0,0,0.3)">ACENTO</span></div>
+      <div class="sinfo">
+        <div class="sname">Hose Yellow</div>
+        <div class="shex">#F5C518</div>
+        <div class="suse">El guiño a las mangueras. Specs, alertas</div>
+      </div>
+    </div>
+    <div class="cswatch">
+      <div class="sblock" style="background:#68686A"><span class="slabel-on" style="color:rgba(255,255,255,0.3)">NEUTRO</span></div>
+      <div class="sinfo">
+        <div class="sname">Steel Gray</div>
+        <div class="shex">#68686A</div>
+        <div class="suse">Texto secundario, bordes, iconos</div>
+      </div>
+    </div>
+    <div class="cswatch">
+      <div class="sblock" style="background:#F4F2EC;border-bottom:0.5px solid var(--color-border-tertiary)"><span class="slabel-on" style="color:rgba(0,0,0,0.15)">FONDO</span></div>
+      <div class="sinfo">
+        <div class="sname">Off-White</div>
+        <div class="shex">#F4F2EC</div>
+        <div class="suse">Fondo principal, superficies cálidas</div>
+      </div>
+    </div>
+    <div class="cswatch">
+      <div class="sblock" style="background:#1B1916"><span class="slabel-on" style="color:rgba(255,255,255,0.18)">OSCURO</span></div>
+      <div class="sinfo">
+        <div class="sname">Dark Iron</div>
+        <div class="shex">#1B1916</div>
+        <div class="suse">Footer, paneles oscuros, secciones hero</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 14px;font-size:12px;color:var(--color-text-secondary);line-height:1.6;margin-bottom:1rem">
+    <strong style="color:var(--color-text-primary)">Combinaciones correctas:</strong> Rojo + negro = fuerza máxima · Negro + amarillo = lenguaje técnico · Rojo sobre Off-White = acción principal · Nunca rojo sobre amarillo ni amarillo sobre Off-White.
+  </div>
+
+  <hr class="divider">
+
+  <p class="overline">02 — Sistema tipográfico</p>
+  <p class="sec-desc">Tres roles tipográficos, cada uno con su función específica. La jerarquía es intencionalmente industrial.</p>
+
+  <div class="tspec">
+    <div class="tlabel">Display · Titulares de marca <span class="tlabel-pill">Bebas Neue</span></div>
+    <div class="t-disp">MANGUERAS HIDRÁULICAS</div>
+    <div class="t-disp-red">METCAR URUGUAY — DESDE 2014</div>
+    <div class="t-meta">Bebas Neue · Solo mayúsculas · Uso en: hero titles, nombres de categoría, números de presión como elemento gráfico. Es la misma familia visual que el texto impreso en mangueras reales — esa es la conexión.</div>
+  </div>
+
+  <div class="tspec">
+    <div class="tlabel">Cuerpo · Texto de lectura <span class="tlabel-pill">Barlow</span></div>
+    <div class="t-body">Importamos y distribuimos insumos hidráulicos de primera calidad para industrias, talleres y maquinaria agrícola en todo Uruguay. Más de 10 años de trayectoria respaldan cada producto que distribuimos bajo nuestra marca.</div>
+    <div class="t-meta">Barlow Regular / Medium · Uso en: descripciones de producto, párrafos, formularios. Limpio, legible, con carácter industrial sin ser difícil de leer.</div>
+  </div>
+
+  <div class="tspec">
+    <div class="tlabel">Técnico · Specs y badges <span class="tlabel-pill">Barlow Condensed Bold</span></div>
+    <div class="t-cond">1/2" · SAE 100R2AT · 225 BAR · WP 225</div>
+    <div class="t-cond-sm">REF: MC-MH-05-R2 · EN STOCK · IMPORTADO POR METCAR</div>
+    <div class="t-meta">Barlow Condensed 700 · Uso en: especificaciones técnicas, códigos de referencia, badges de estado, etiquetas de categoría. Es el "idioma" de los fittings y las mangueras trasladado a pantalla.</div>
+  </div>
+
+  <hr class="divider">
+
+  <p class="overline">03 — El concepto Hose Code ✦ La idea central</p>
+  <p class="sec-desc">Las mangueras hidráulicas reales tienen texto técnico impreso en amarillo sobre negro. Esa es la firma visual más reconocible del rubro. Metcar la adopta como lenguaje de marca — sutil, coherente, acumulativo.</p>
+
+  <p style="font-size:11px;color:var(--color-text-tertiary);margin-bottom:6px;text-transform:uppercase;letter-spacing:1px">La manguera real:</p>
+  <div class="hose-band">
+    <div class="hose-stripe"></div>
+    <div class="hose-main">METCAR 1/2" SAE 100R2AT 225BAR WP 225 TEST 450</div>
+    <div class="hose-sub">IMPORTADO POR METCAR URUGUAY · metcar.uy · INFO@METCAR.COM.UY</div>
+  </div>
+
+  <p style="font-size:11px;color:var(--color-text-tertiary);margin:10px 0 8px;text-transform:uppercase;letter-spacing:1px">Se convierte en el lenguaje visual del sitio:</p>
+  <div class="app-grid">
+    <div class="app-el">
+      <div class="app-el-label">Badge de especificación</div>
+      <span class="badge-spec">1/2" · 225 BAR</span>
+    </div>
+    <div class="app-el">
+      <div class="app-el-label">Etiqueta de categoría</div>
+      <span class="badge-cat">MANGUERAS</span>
+    </div>
+    <div class="app-el">
+      <div class="app-el-label">Presión como elemento gráfico</div>
+      <div class="n-big">225</div>
+      <div class="n-unit">BAR · PRESIÓN MÁXIMA DE TRABAJO</div>
+    </div>
+    <div class="app-el">
+      <div class="app-el-label">Indicador de stock</div>
+      <div style="display:flex;flex-direction:column;gap:6px">
+        <div class="stk-badge"><div class="stk-dot"></div><span class="stk-txt">EN STOCK</span></div>
+        <span class="badge-nostock">SIN STOCK</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:10px;background:var(--color-background-secondary);border-radius:var(--border-radius-md);padding:10px 14px;font-size:12px;color:var(--color-text-secondary);line-height:1.6">
+    <strong style="color:var(--color-text-primary)">El efecto buscado:</strong> cada vez que alguien vea una manguera hidráulica real con texto amarillo, inconscientemente piense en Metcar. Y cada vez que vea el diseño del sitio, recuerde las mangueras. Es un loop de asociación que se construye con el tiempo.
+  </div>
+
+  <hr class="divider">
+
+  <p class="overline">04 — Ideas creativas adicionales</p>
+  <p class="sec-desc">Seis direcciones para hacer que la marca sea reconocible en cada punto de contacto con el cliente.</p>
+
+  <div class="ideas-grid">
+    <div class="idea-card">
+      <div class="idea-num">01</div>
+      <div class="idea-title">El Fitting como isotipo</div>
+      <div class="idea-desc">El círculo concéntrico del logo (la "C" con la rueda hidráulica) se extrae y se convierte en el isotipo independiente. Sin texto, solo el fitting en rojo. Es el favicon, el sello en el packaging, el ícono del WhatsApp Business. La "gota de Nike" de Metcar.</div>
+    </div>
+    <div class="idea-card">
+      <div class="idea-num">02</div>
+      <div class="idea-title">La Banda de Presión</div>
+      <div class="idea-desc">Las mangueras tienen bandas de color para identificar el tipo de línea. Metcar adopta una franja horizontal roja como elemento de diseño recurrente — en el header del sitio, en los emails, en el catálogo impreso. Siempre ahí. Siempre roja. Siempre Metcar.</div>
+    </div>
+    <div class="idea-card">
+      <div class="idea-num">03</div>
+      <div class="idea-title">Fotografía modo taller</div>
+      <div class="idea-desc">Todas las fotos de producto siguen una sola regla: fondo negro absoluto, iluminación lateral dramática, producto como protagonista absoluto. Ninguna foto genérica sobre fondo blanco. Como Apple pero con acero y mangueras. Genera deseo incluso en un fitting.</div>
+    </div>
+    <div class="idea-card">
+      <div class="idea-num">04</div>
+      <div class="idea-title">El número técnico grande</div>
+      <div class="idea-desc">"225 BAR" en Bebas Neue enorme ocupando el fondo de una sección. Las especificaciones técnicas como elementos gráficos, no como datos secundarios. Le dice al cliente técnico "sabemos de qué hablamos" sin escribir una sola palabra de texto explicativo.</div>
+    </div>
+    <div class="idea-card">
+      <div class="idea-num">05</div>
+      <div class="idea-title">Plantilla visual WhatsApp</div>
+      <div class="idea-desc">Metcar vende por WhatsApp. Definir una plantilla: fondo negro, foto del producto, banda roja, código en amarillo condensed. En 2 segundos el cliente reconoce Metcar sin leer el nombre. Cada estado publicado es publicidad de marca que se acumula.</div>
+    </div>
+    <div class="idea-card">
+      <div class="idea-num">06</div>
+      <div class="idea-title">El catálogo como objeto</div>
+      <div class="idea-desc">El catálogo impreso (v2) sigue el mismo lenguaje: tapa oscura, Bebas Neue en rojo, specs en amarillo. Un objeto que los clientes del interior no tiran porque parece un catálogo premium. El cliente lo deja sobre el escritorio del taller a la vista de todos.</div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="summary-box">
+    <p style="font-size:12px;font-weight:500;color:var(--color-text-primary);margin-bottom:8px;text-transform:uppercase;letter-spacing:1px">El sistema en una frase</p>
+    <p style="font-family:'Bebas Neue',sans-serif;font-size:22px;color:var(--color-text-primary);line-height:1.3;letter-spacing:0.5px">ROJO METCAR · NEGRO INDUSTRIAL · AMARILLO MANGUERA · BEBAS NEUE COMO VOZ</p>
+    <p style="font-size:12px;color:var(--color-text-secondary);margin-top:8px;line-height:1.6">Cuando los cuatro elementos se juntan, no hay dudas de quién habla. Ese es el objetivo a largo plazo: que el sistema sea tan coherente y consistente que la marca se reconozca antes de leer el nombre.</p>
+  </div>
+
+</div>
